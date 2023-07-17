@@ -1,13 +1,164 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+::selection{
+  background-color: #004cff3d;
 }
+body{
+  margin: 0;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+}
+.Top{
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Pacifico', cursive;
+}
+.Top h1{
+  margin: 0 10rem;
+}
+.Top h1::before{
+  content: "";
+  margin: 2px;
+  display: block;
+  background-color: rgba(255, 255, 255, 0.201);
+  position: absolute;
+  height: 3.5rem;
+  width: 19rem;
+  border-radius: 15px;
+  /* left: 28%; */
+  z-index: -1;
+  transition: 300ms ease-in-out;
+  opacity: 0;
+}
+.Top h1:hover::before{
+  opacity: 1;
+}
+.Top h1::after{
+  content: "A Pomodoro timer is a productivity tool that helps individuals break their work into intervals, typically 25 minutes of focused work followed by a short break, to enhance productivity and manage time effectively.";
+  display: block;
+  margin: 3px;
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  width: 20%;
+  background-color: rgba(255, 255, 255, 0.201);
+  padding: 1rem;
+  border-radius: 15px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  position: absolute;
+  opacity: 0.7;
+  transform: scale(0);
+  transition: 300ms ease-in-out;
+  transform-origin: top;
+}
+.Top h1:hover::after{
+  transform: scale(1);
+  opacity: 1;
+}
+.Frame{
+  background-color: rgba(255, 255, 255, 0.297);
+  backdrop-filter: blur(50px);
+  border: 1px solid rgba(255, 255, 255, 0.348);
+  padding: 5rem;
+  margin: 2rem;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 10rem;
+  height: 15rem;
+  transition: 300ms ease-in-out;
+  font-family: 'Poppins', sans-serif;
+}
+.Frame:hover{
+  box-shadow:  0 0 50px 20px rgba(0, 0, 0, 0.095);
+}
+.Main{
+  font-size: 3rem;
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.13);
+  backdrop-filter: blur(20px);
+  padding: 1rem;
+  margin: 1rem 1rem;
+  width: 10rem;
+  border-radius: 15px;
+  color: black;
+  display: flex;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.168);
+
+}
+.Main p{
+  letter-spacing: 5px;
+}
+.cycle{
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: black;
+  background-color: rgba(245, 222, 179, 0.329);
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.168);
+  
+}
+.cycle p{
+  margin: 0;
+}
+button{
+  border: none;
+  margin: 0;
+  padding: 10px;
+  height: 2.5rem;
+  width: 6rem;
+  font-size: 1rem;
+  font-weight: bolder;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.404);
+  border-radius: 10px;
+  transition: 250ms ease-in-out;
+  border: 1px solid rgba(255, 255, 255, 0.168);
+}
+button:hover{
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+button:active{
+  transform: scale(0.98);
+  background-color: rgba(255, 255, 255, 0.332);
+}
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+.footer{
+  display: flex;
+  position: relative;
+  height: 30px;
+  margin: 0;
+  top:100px;
+  padding: 0;
+}
+.footer p{
+  display: block;
+  width: 100%;
+  height: 30px;
+  margin: 0;
+  text-align: center;
 }
