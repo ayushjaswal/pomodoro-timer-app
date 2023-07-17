@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useSound } from 'react';
+import React, { useState, useEffect } from 'react';
 import Cycle from './Components/Cycle';
 import Button from './Components/Button';
 import TimeFrame from './Components/TimeFrame';
@@ -8,7 +8,6 @@ import './index.css';
 
 const Time = () => {
     // const playBellSound = useSound(bellSound);
-    const audioElm = document.getElementById("bell");
     const [buttonValue, toggleButtonValue] = useState("START");
     const [cycle, updateCycle] = useState(0);
     const [timeMin, changetimeMin] = useState(0);
@@ -29,7 +28,7 @@ const Time = () => {
             changetimeSec(prevTimeSec => prevTimeSec + 1);
             changemainTimeSec(timeSec.toString().padStart(2, '0'));
         }
-        else if (timeSec + 1 == 60) {
+        else if (timeSec + 1 === 60) {
             changetimeMin(prevTimeMin => prevTimeMin + 1);
             changetimeSec(0);
             changemainTimeSec("00");
